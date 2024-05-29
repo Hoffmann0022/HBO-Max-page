@@ -611,6 +611,12 @@ footer h5{
     .cards .card:nth-child(2):hover{
         transform: translateX(0vw);
     }
+    .universes_card:hover img{
+        opacity: 1;
+    }
+    .universes_card:hover{
+        transform: scale(100%);
+    }
 }
 
 
