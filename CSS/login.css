@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap");
+
+/* Gerais */
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: Raleway;
+    color: var(--text-color);
+}
+
+body{
+    background-color: var(--primary-color);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Variaveis de cores */
+
+:root {
+    --primary-color: #020228;
+    --secondary-color: #ff00e5;
+    --tertiary-color: #b535f6;
+    --btn-bg-color-gradient: linear-gradient(45deg,#9b34ef 0% ,#490cb0 20%,transparent 50%);
+    --btn-link-bg-color: #fff;
+    --btn-link-color: #000;
+    --card-bg-color: linear-gradient(0deg, transparent, #3b1e63);
+    --divider-bg-color: linear-gradient(90deg, #5516ba,rgba(255, 0, 229, 0.5));
+    --nav-bg-color: rgba(0, 0, 0, 0.3);
+    --text-color: #fff;
+    --link-color: #9e86ff;
+    --form-bg-color: rgba(211, 211, 211, 0.06);
+    --form-field-bg-color: rgba(0, 0, 0, 0.2);
+    --form-field-border: 1px solid rgba(255, 255, 255, 0.7);
+    --form-field-placeholder: rgba(255, 255, 255, 0.7);
+    --form-field-error: rgb(255, 76, 76);
+
+    scroll-behavior: smooth;
+}
+
+/* Custom Scroll */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--tertiary-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Header */
+
+header{
+    background-color: var(--nav-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100vw;
+}
+
+/* logo da HBO Max */
+.logo{
+    width: 160px;
+    margin: 15px 30px;
+    cursor: pointer;
+}
+
+/* Botões */
+.login{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    margin: 15px 12px;
+}
+
+.btn_header{
+    background-color: transparent;
+}
+
+.btn_header a{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+
+    margin: 15px 30px 15px 12px;
+    background-color: var( --tertiary-color);
+    padding: 8px 26px;
+    border-radius: 50px;
+
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+
+.btn_header a:hover{
+    background-color: var(--btn-link-bg-color) ;
+    color: var(--btn-link-color);
+}
+
+/* Main */
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../IMG/background-movies-series.png);
+    position: relative;
+    padding: 100px 0px;
+} 
+
+main::after{
+    content: "";
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(transparent , var(--primary-color));
+}
+
+main::before{
+    content: "";
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    background: linear-gradient( var(--primary-color) 0%, transparent 100%);
+}
+
+.login_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px 40px;
+    width: 60vw;
+    background-color: var(--form-bg-color);
+    border-radius: 7px;
+    text-align: center;
+    margin: auto;
+}
+
+.login_box h1{
+    margin-bottom: 70px;
+}
+
+.login_box form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+}
+
+.login_box label{
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: none;
+}
+
+.login_box input{
+    height: 53px;
+    width: 50vw;
+    margin-top: 30px;
+    padding-left: 15px;
+    font-size: 1rem;
+    
+    border:var(--form-field-border);
+    border-radius: 7px;
+    background-color: var(--form-field-bg-color);
+}
+
+.login_box input::placeholder{
+    color: var(--form-field-placeholder);
+}
+
+.login_box input:invalid{
+    border-color: var(--form-field-error);
+}
+
+.login_box input:focus{
+    outline:1px solid transparent;
+}
+
+.login_box .email:invalid ~ .email_invalid{
+    display: block;
+}
+
+.login_box .senha:invalid ~ .senha_invalid{
+    display: block;
+}
+
+.login_box span{
+    font-weight: 100;
+    font-size: 0.6rem;
+    text-transform: lowercase;
+    color: var(--form-field-error);
+    margin: 5px;
+    display: none;
+}
+
+.buttons_login{
+    margin-top: 50px;
+}
+
+
+.buttons_login button:nth-child(1){
+    background: none;
+    animation: wiggle 2.2s linear infinite;
+    animation-delay: 2s;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+
+    background: var( --btn-bg-color-gradient);
+    background-size: 250%;
+    padding: 16px 40px;
+    border-radius: 50px;
+    outline: 2px solid transparent;
+    background-repeat: no-repeat;
+
+    transition: all 1s;
+    cursor: pointer;
+    
+}
+
+.buttons_login button:nth-child(1):hover{
+    background-size: 0%;
+    background-repeat: no-repeat;
+    outline: 2px solid  var(--secondary-color);
+    
+}
+
+.buttons_login button:nth-child(2){
+    text-decoration: none;
+    padding:20px;
+    color: var(--link-color);
+    font-weight: 900;
+    font-size: 1rem;
+    transition: all .5s ease-in-out;
+    background: none;
+    cursor: pointer;
+}
+
+.buttons_login button:nth-child(2):hover{
+    color: var(--text-color);
+}
+
+
+/* Footer */
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px 20px 0px;
+}
+
+.footer_links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer_links ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    line-height: 20px;
+}
+.footer_links ul li{
+    padding:3px 0px;
+}
+
+.footer_links ul li a{
+    text-decoration: none;
+    padding:20px;
+    color: var(--link-color);
+    font-weight: 600;
+    transition: all .5s ease-in-out;
+}
+
+.footer_links ul li a:hover{
+    color: var(--text-color);
+}
+
+footer h5{
+    color: var(--link-color);
+    font-family: Quicksand;
+    font-size: 0.7rem;
+    font-weight: 100;
+    margin: 0px 30px;
+    text-align: center;
+}
+
+.footer_social{
+    margin-top:70px;
+}
+
+.footer_social img{
+    padding: 20px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:685px){
+    .login_box{
+        width: 80vw;
+    }
+
+    .login_box input{
+
+        width: 70vw;
+    }
+}
+
+@media only screen and (max-width:516px){
+
+    header{
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+
+    .logo{
+        width: 120px;
+    }
+    .login{
+        font-size: 0.7rem;
+        margin: 0px;
+        margin-right: 30px;
+    }
+
+    .buttons{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .btn_header a{
+        font-size: 0.7rem;
+        padding: 8px 19px;
+        margin: 0px;
+    }
+}
